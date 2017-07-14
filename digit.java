@@ -1,22 +1,30 @@
 package guvi;
-
+import java.util.Scanner;
 import java.util.Scanner;
 
 public class digit {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner sc=new Scanner(System.in);
-		System.out.println("\n Enter any Number: ");
-		int a=sc.nextInt();
-		int Number;
-		int Count=0;
-		Number = sc.nextInt();
-		while(Number > 0) {
-			Number = Number / 10;
-			Count = Count + 1; 
+		int n,sum=0;
+		int b[] = new int[100];
+		int s[]=new int[100];
+		int num=0,a;
+		int m=0;
+		Scanner ac=new Scanner(System.in);
+		n=ac.nextInt();
+		while(n>0){
+			a=n%10;
+			b[num]=a;
+			n=n/10;
+			num++;
 		}
-		System.out.format("\n Number of Digits in a Given Number = %d", Count);
+		for(int i=num-1;i>=0;i--){
+			s[i]=m+b[i];
+			m=s[i];
+		}
+		for(int i=num-1;i>=0;i--){
+					sum=sum+s[i];
+		}System.out.println("sum "+sum);
 	}
-}
-   
+	}
+
